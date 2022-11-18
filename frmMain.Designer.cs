@@ -32,7 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelController = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnReport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAnswers = new System.Windows.Forms.Button();
             this.btnRule = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
             this.btnTuVan = new System.Windows.Forms.Button();
@@ -67,7 +68,8 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panelMenu.Controls.Add(this.btnReport);
+            this.panelMenu.Controls.Add(this.button1);
+            this.panelMenu.Controls.Add(this.btnAnswers);
             this.panelMenu.Controls.Add(this.btnRule);
             this.panelMenu.Controls.Add(this.btn);
             this.panelMenu.Controls.Add(this.btnTuVan);
@@ -79,20 +81,37 @@
             this.panelMenu.Size = new System.Drawing.Size(242, 647);
             this.panelMenu.TabIndex = 2;
             // 
-            // btnReport
+            // button1
             // 
-            this.btnReport.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReport.FlatAppearance.BorderSize = 0;
-            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReport.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReport.Location = new System.Drawing.Point(0, 413);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(242, 93);
-            this.btnReport.TabIndex = 11;
-            this.btnReport.Text = "Trả Lời";
-            this.btnReport.UseVisualStyleBackColor = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 478);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(242, 86);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Kết Quả";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAnswers
+            // 
+            this.btnAnswers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnswers.FlatAppearance.BorderSize = 0;
+            this.btnAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnswers.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnswers.Image = ((System.Drawing.Image)(resources.GetObject("btnAnswers.Image")));
+            this.btnAnswers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnswers.Location = new System.Drawing.Point(0, 392);
+            this.btnAnswers.Name = "btnAnswers";
+            this.btnAnswers.Size = new System.Drawing.Size(242, 86);
+            this.btnAnswers.TabIndex = 11;
+            this.btnAnswers.Text = "Trả Lời";
+            this.btnAnswers.UseVisualStyleBackColor = true;
+            this.btnAnswers.Click += new System.EventHandler(this.btnAnswers_Click_1);
             // 
             // btnRule
             // 
@@ -102,12 +121,13 @@
             this.btnRule.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRule.Image = ((System.Drawing.Image)(resources.GetObject("btnRule.Image")));
             this.btnRule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRule.Location = new System.Drawing.Point(0, 320);
+            this.btnRule.Location = new System.Drawing.Point(0, 306);
             this.btnRule.Name = "btnRule";
-            this.btnRule.Size = new System.Drawing.Size(242, 93);
+            this.btnRule.Size = new System.Drawing.Size(242, 86);
             this.btnRule.TabIndex = 10;
             this.btnRule.Text = "Luật";
             this.btnRule.UseVisualStyleBackColor = true;
+            this.btnRule.Click += new System.EventHandler(this.btnRule_Click);
             // 
             // btn
             // 
@@ -117,12 +137,13 @@
             this.btn.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Image = ((System.Drawing.Image)(resources.GetObject("btn.Image")));
             this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn.Location = new System.Drawing.Point(0, 227);
+            this.btn.Location = new System.Drawing.Point(0, 220);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(242, 93);
+            this.btn.Size = new System.Drawing.Size(242, 86);
             this.btn.TabIndex = 8;
             this.btn.Text = "Câu Hỏi";
             this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnTuVan
             // 
@@ -134,7 +155,7 @@
             this.btnTuVan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTuVan.Location = new System.Drawing.Point(0, 134);
             this.btnTuVan.Name = "btnTuVan";
-            this.btnTuVan.Size = new System.Drawing.Size(242, 93);
+            this.btnTuVan.Size = new System.Drawing.Size(242, 86);
             this.btnTuVan.TabIndex = 9;
             this.btnTuVan.Text = "Tư Vấn";
             this.btnTuVan.UseVisualStyleBackColor = true;
@@ -193,13 +214,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelController;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnAnswers;
         private System.Windows.Forms.Button btnRule;
         private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Button btnTuVan;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

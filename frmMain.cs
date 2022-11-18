@@ -65,16 +65,28 @@ namespace HCG_NNLT
 
         private void btnTuVan_Click(object sender, EventArgs e)
         {
-            frmRule frm = new frmRule();
-            //frm.MdiParent= this;
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-            this.panel1.Controls.Add(frm);
-            this.panel1.Tag = frm;
-            frm.BringToFront();
-            frm.Show();
-            frm.Show();
+            OpenChildFrom(new frmAdvise(), sender);
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            OpenChildFrom(new frmQuestion(), sender);
+        }
+
+        private void btnRule_Click(object sender, EventArgs e)
+        {
+            OpenChildFrom(new frmRule(), sender);
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildFrom(new frmResult(), sender);
+        }
+
+        private void btnAnswers_Click_1(object sender, EventArgs e)
+        {
+            OpenChildFrom(new frmAnswer(), sender);
         }
     }
 }

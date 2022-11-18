@@ -12,10 +12,10 @@ using WindowsFormsApp1.Controller;
 
 namespace HCG_NNLT.Src.Panel
 {
-    public partial class frmRule : Form
+    public partial class frmQuestion : Form
     {
-        RuleController ruleController = new RuleController();
-        public frmRule()
+        QuestionController questionController = new QuestionController();
+        public frmQuestion()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                DataSet rs = ruleController.getAll("rule");
+                DataSet rs = questionController.getAll("rule");
                 dgv.DataSource = rs.Tables["rule"];
             }
             catch (Exception ex)
@@ -34,9 +34,8 @@ namespace HCG_NNLT.Src.Panel
         }
         private void clearText(Boolean check)
         {
-            txtMaNL.Text = "";
-            txtTenNL.Text = "";
-            txtNCC.Text = "";
+            txtQuestionID.Text = "";
+            rtbName.Text = "";
 
             btnAdd.Enabled = check;
             btnEdit.Enabled = !check;
@@ -53,11 +52,11 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                string TenNL = txtTimKiem.Text.Trim();
+                string Name = txtTimKiem.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                DataSet rs = ruleController.search("warehouse", data);
-                dgv.DataSource = rs.Tables["warehouse"];
+                data.Add(new SqlParameter("@Name", Name));
+                DataSet rs = questionController.search("question", data);
+                dgv.DataSource = rs.Tables["question"];
             }
             catch (Exception ex)
             {
@@ -69,13 +68,12 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                String TenNL = txtTenNL.Text.Trim();
-                String NCC = txtNCC.Text.Trim();
+                String QuestionID = txtQuestionID.Text.Trim();
+                String Name = rtbName.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                data.Add(new SqlParameter("@NCC", NCC));
-                data.Add(new SqlParameter("@SoLuongTon", SoLuongTon));
-                int rs = ruleController.insertData(data);
+                data.Add(new SqlParameter("@Name", Name));
+                data.Add(new SqlParameter("@QuestionID", QuestionID));
+                int rs = questionController.insertData(data);
                 if (rs <= 0)
                 {
                     MessageBox.Show("Không Thành Công !");
@@ -97,15 +95,12 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                String MaNL = txtMaNL.Text.Trim();
-                String TenNL = txtTenNL.Text.Trim();
-                String NCC = txtNCC.Text.Trim();
+                String QuestionID = txtQuestionID.Text.Trim();
+                String Name = rtbName.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@MaNL", MaNL));
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                data.Add(new SqlParameter("@NCC", NCC));
-                data.Add(new SqlParameter("@SoLuongTon", SoLuongTon));
-                int rs = ruleController.updateData(data);
+                data.Add(new SqlParameter("@QuestionID", QuestionID));
+                data.Add(new SqlParameter("@Name", Name));
+                int rs = questionController.updateData(data);
                 if (rs <= 0)
                 {
                     MessageBox.Show("Không Thành Công !");
@@ -132,11 +127,11 @@ namespace HCG_NNLT.Src.Panel
                 {
                     return;
                 }
-                String MaNL = txtMaNL.Text.Trim();
+                String QuestionID = txtQuestionID.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@MaNL", MaNL));
+                data.Add(new SqlParameter("@QuestionID", QuestionID));
 
-                int rs = ruleController.deleteData(data);
+                int rs = questionController.deleteData(data);
                 if (rs <= 0)
                 {
                     MessageBox.Show("Không Thành Công !");
@@ -165,12 +160,16 @@ namespace HCG_NNLT.Src.Panel
             if (idx >= 0)
             {
                 clearText(false);
-                txtMaNL.Text = dgv.Rows[idx].Cells["MaNL"].Value.ToString();
-                txtTenNL.Text = dgv.Rows[idx].Cells["TenNL"].Value.ToString();
-                txtNCC.Text = dgv.Rows[idx].Cells["NCC"].Value.ToString();
-                //numSoLuongTon.Value = Convert.ToInt32(dgvWarehouse.Rows[idx].Cells["SoLuongTon"].Value.ToString());
+                txtQuestionID.Text = dgv.Rows[idx].Cells["QuestionID"].Value.ToString();
+                rtbName.Text = dgv.Rows[idx].Cells["Name"].Value.ToString();
 
             }
+        }
+
+        private void frmQuestion_Load(object sender, EventArgs e)
+        {
+            getData();
+            clearText(true);
         }
     }
 }
