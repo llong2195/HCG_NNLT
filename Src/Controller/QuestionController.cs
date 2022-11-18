@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
-                string sql = "select top 1 from tbl_Questions where QuestionId = @QuestionId";
+                string sql = "select top 1 * from tbl_Questions where QuestionID = @QuestionID";
                 rs = conn.getData(sql, table_name, data);
                 return rs;
             }
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
-                string sql = "insert into tbl_Questions(QuestionID, Name) values (@QuestionID, @Name)";
+                string sql = "insert into tbl_Questions(QuestionID, QuestionName) values (@QuestionID, @QuestionName)";
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
-                string sql = "update tbl_Questions set Name = @Name where QuestionID = @QuestionID";
+                string sql = "update tbl_Questions set QuestionName = @QuestionName where QuestionID = @QuestionID";
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
-                string sql = "select * from tbl_Questions where Name like '%' + @Name + '%'";
+                string sql = "select * from tbl_Questions where QuestionName like '%' + @QuestionName + '%'";
                 rs = conn.getData(sql, table_name, data);
                 return rs;
             }

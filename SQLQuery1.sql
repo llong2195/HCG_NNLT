@@ -1,4 +1,9 @@
-﻿create table tbl_Questions(
+﻿create database HCG_NNLT
+go
+use HCG_NNLT
+go
+
+create table tbl_Questions(
     QuestionID varchar(10) primary key,
 	QuestionName nvarchar(max)
 )
@@ -10,8 +15,6 @@ Insert into tbl_Questions values('Q5',N'Bạn muốn làm với hệ điều hà
 Insert into tbl_Questions values('Q6',N'Bạn muốn làm trong công ty nào?')
 Insert into tbl_Questions values('Q7',N'Bạn có ý tưởng nào trong đầu chưa?')
 Insert into tbl_Questions values('Q8',N'Bạn muốn học mọi thứ theo cách nào?')
-
-drop table tbl_Results
 
 create table tbl_Answers(
 	AnswerID varchar(10) primary key,
@@ -61,9 +64,6 @@ Insert into tbl_Results values('R5',null,'Python')
 Insert into tbl_Results values('R6',null,'C++')
 
 
-
-
-Insert into tbl_Rules values('Ru1','')
 
 create table tbl_Rules(
 	RuleID varchar(10) primary key,

@@ -24,8 +24,8 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                DataSet rs = questionController.getAll("rule");
-                dgv.DataSource = rs.Tables["rule"];
+                DataSet rs = questionController.getAll("data");
+                dgv.DataSource = rs.Tables["data"];
             }
             catch (Exception ex)
             {
@@ -36,7 +36,7 @@ namespace HCG_NNLT.Src.Panel
         {
             txtQuestionID.Text = "";
             rtbName.Text = "";
-
+            txtQuestionID.Enabled = check;
             btnAdd.Enabled = check;
             btnEdit.Enabled = !check;
             btnDel.Enabled = !check;
@@ -52,9 +52,9 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                string Name = txtTimKiem.Text.Trim();
+                string QuestionName = txtTimKiem.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@Name", Name));
+                data.Add(new SqlParameter("@QuestionName", QuestionName));
                 DataSet rs = questionController.search("question", data);
                 dgv.DataSource = rs.Tables["question"];
             }
@@ -69,9 +69,9 @@ namespace HCG_NNLT.Src.Panel
             try
             {
                 String QuestionID = txtQuestionID.Text.Trim();
-                String Name = rtbName.Text.Trim();
+                String QuestionName = rtbName.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@Name", Name));
+                data.Add(new SqlParameter("@QuestionName", QuestionName));
                 data.Add(new SqlParameter("@QuestionID", QuestionID));
                 int rs = questionController.insertData(data);
                 if (rs <= 0)
@@ -96,10 +96,10 @@ namespace HCG_NNLT.Src.Panel
             try
             {
                 String QuestionID = txtQuestionID.Text.Trim();
-                String Name = rtbName.Text.Trim();
+                String QuestionName = rtbName.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
                 data.Add(new SqlParameter("@QuestionID", QuestionID));
-                data.Add(new SqlParameter("@Name", Name));
+                data.Add(new SqlParameter("@QuestionName", QuestionName));
                 int rs = questionController.updateData(data);
                 if (rs <= 0)
                 {
@@ -161,8 +161,7 @@ namespace HCG_NNLT.Src.Panel
             {
                 clearText(false);
                 txtQuestionID.Text = dgv.Rows[idx].Cells["QuestionID"].Value.ToString();
-                rtbName.Text = dgv.Rows[idx].Cells["Name"].Value.ToString();
-
+                rtbName.Text = dgv.Rows[idx].Cells["QuestionName"].Value.ToString();
             }
         }
 

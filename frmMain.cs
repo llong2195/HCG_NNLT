@@ -88,5 +88,10 @@ namespace HCG_NNLT
         {
             OpenChildFrom(new frmAnswer(), sender);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

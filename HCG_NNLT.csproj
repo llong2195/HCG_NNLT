@@ -52,6 +52,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Src\Controller\AdviseController.cs" />
     <Compile Include="Src\Controller\AnswerController.cs" />
     <Compile Include="Src\Controller\QuestionController.cs" />
     <Compile Include="Src\Controller\ResultController.cs" />
