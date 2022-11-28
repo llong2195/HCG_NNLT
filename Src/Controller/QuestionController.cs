@@ -47,7 +47,11 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
+<<<<<<< HEAD
                 string sql = "insert into tbl_Questions(QuestionID, QuestionName) values (@QuestionID, @QuestionName)";
+=======
+                string sql = "insert into tbl_Questions(QuestionID, QuestionName) values (@QuestionID, @Name)";
+>>>>>>> origin/kendz
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -60,7 +64,11 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
+<<<<<<< HEAD
                 string sql = "update tbl_Questions set QuestionName = @QuestionName where QuestionID = @QuestionID";
+=======
+                string sql = "update tbl_Questions set QuestionName = @Name where QuestionID = @QuestionID";
+>>>>>>> origin/kendz
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -87,7 +95,11 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
+<<<<<<< HEAD
                 string sql = "select * from tbl_Questions where QuestionName like '%' + @QuestionName + '%'";
+=======
+                string sql = "select * from tbl_Questions where QuestionName like '%' + @Name + '%'";
+>>>>>>> origin/kendz
                 rs = conn.getData(sql, table_name, data);
                 return rs;
             }

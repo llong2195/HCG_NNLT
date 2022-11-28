@@ -18,6 +18,7 @@ namespace HCG_NNLT.Src.Panel
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
         QuestionController questionController = new QuestionController();
 
         private void loadData(String QuestionID)
@@ -50,5 +51,12 @@ namespace HCG_NNLT.Src.Panel
         {
             loadData(QuestionID);
         }
+=======
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> origin/kendz
     }
 }

@@ -10,7 +10,7 @@ namespace HCG_NNLT.Src.DbConnect
 {
     internal class dbConnect
     {
-        String conn_str = @"Data Source=LLONG2195;Initial Catalog=HCG_NNLT; User ID=sa; Password = 123456";
+        String conn_str = @"Data Source=KENDZ\SQLEXPRESS;Initial Catalog=HCG; User ID=sa; Password = 123456";
         SqlConnection conn = null;
 
         public dbConnect()
@@ -71,10 +71,7 @@ namespace HCG_NNLT.Src.DbConnect
         }
         public int UpdateData(String sql, List<SqlParameter> data)
         {
-            if (conn == null)
-            {
-                conn = new SqlConnection(conn_str);
-            }
+           
             try
             {
                 conn.Open();

@@ -15,6 +15,7 @@ namespace HCG_NNLT.Src.Panel
     public partial class frmRule : Form
     {
         RuleController ruleController = new RuleController();
+        ResultController resultController = new ResultController();
         public frmRule()
         {
             InitializeComponent();
@@ -26,6 +27,10 @@ namespace HCG_NNLT.Src.Panel
             {
                 DataSet rs = ruleController.getAll("rule");
                 dgv.DataSource = rs.Tables["rule"];
+                DataSet ts = resultController.getAll("result");
+                cbbResult.DataSource = ts.Tables["result"];
+                cbbResult.DisplayMember = "ResultName";
+                cbbResult.ValueMember = "ResultID";
             }
             catch (Exception ex)
             {
@@ -34,9 +39,9 @@ namespace HCG_NNLT.Src.Panel
         }
         private void clearText(Boolean check)
         {
-            txtMaNL.Text = "";
-            txtTenNL.Text = "";
-            txtNCC.Text = "";
+            txtRuleID.Text = "";
+            txtRules.Text = "";
+            cbbResult.SelectedText = "";
 
             btnAdd.Enabled = check;
             btnEdit.Enabled = !check;
@@ -53,11 +58,11 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                string TenNL = txtTimKiem.Text.Trim();
+                string Rules = txtTimKiem.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                DataSet rs = ruleController.search("warehouse", data);
-                dgv.DataSource = rs.Tables["warehouse"];
+                data.Add(new SqlParameter("@Rules", Rules));
+                DataSet rs = ruleController.search("rule", data);
+                dgv.DataSource = rs.Tables["rule"];
             }
             catch (Exception ex)
             {
@@ -69,12 +74,13 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                String TenNL = txtTenNL.Text.Trim();
-                String NCC = txtNCC.Text.Trim();
+                String RuleID = txtRuleID.Text;
+                String Rules = txtRules.Text.Trim();
+                String ResultID = cbbResult.SelectedValue.ToString();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                data.Add(new SqlParameter("@NCC", NCC));
-                data.Add(new SqlParameter("@SoLuongTon", SoLuongTon));
+                data.Add(new SqlParameter("@RuleID", RuleID));
+                data.Add(new SqlParameter("@Rules", Rules));
+                data.Add(new SqlParameter("@ResultID", ResultID));
                 int rs = ruleController.insertData(data);
                 if (rs <= 0)
                 {
@@ -97,14 +103,13 @@ namespace HCG_NNLT.Src.Panel
         {
             try
             {
-                String MaNL = txtMaNL.Text.Trim();
-                String TenNL = txtTenNL.Text.Trim();
-                String NCC = txtNCC.Text.Trim();
+                String RuleID = txtRuleID.Text.Trim();
+                String Rules = txtRules.Text.Trim();
+                String ResultID = cbbResult.SelectedValue.ToString();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@MaNL", MaNL));
-                data.Add(new SqlParameter("@TenNL", TenNL));
-                data.Add(new SqlParameter("@NCC", NCC));
-                data.Add(new SqlParameter("@SoLuongTon", SoLuongTon));
+                data.Add(new SqlParameter("@RuleID", RuleID));
+                data.Add(new SqlParameter("@Rules", Rules));
+                data.Add(new SqlParameter("@ResultID", ResultID));
                 int rs = ruleController.updateData(data);
                 if (rs <= 0)
                 {
@@ -132,9 +137,9 @@ namespace HCG_NNLT.Src.Panel
                 {
                     return;
                 }
-                String MaNL = txtMaNL.Text.Trim();
+                String RuleID = txtRuleID.Text.Trim();
                 List<SqlParameter> data = new List<SqlParameter>();
-                data.Add(new SqlParameter("@MaNL", MaNL));
+                data.Add(new SqlParameter("@RuleID", RuleID));
 
                 int rs = ruleController.deleteData(data);
                 if (rs <= 0)
@@ -165,12 +170,17 @@ namespace HCG_NNLT.Src.Panel
             if (idx >= 0)
             {
                 clearText(false);
-                txtMaNL.Text = dgv.Rows[idx].Cells["MaNL"].Value.ToString();
-                txtTenNL.Text = dgv.Rows[idx].Cells["TenNL"].Value.ToString();
-                txtNCC.Text = dgv.Rows[idx].Cells["NCC"].Value.ToString();
+                txtRuleID.Text = dgv.Rows[idx].Cells["RuleID"].Value.ToString();
+                txtRules.Text = dgv.Rows[idx].Cells["Rules"].Value.ToString();
+                cbbResult.SelectedValue = dgv.Rows[idx].Cells["ResultID"].Value.ToString();
                 //numSoLuongTon.Value = Convert.ToInt32(dgvWarehouse.Rows[idx].Cells["SoLuongTon"].Value.ToString());
 
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

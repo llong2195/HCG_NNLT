@@ -69,5 +69,5 @@ create table tbl_Rules(
 	RuleID varchar(10) primary key,
 	ResultID int,
 	Rules nvarchar(max)
-)
+) 
 
