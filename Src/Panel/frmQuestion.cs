@@ -161,7 +161,7 @@ namespace HCG_NNLT.Src.Panel
             {
                 clearText(false);
                 txtQuestionID.Text = dgv.Rows[idx].Cells["QuestionID"].Value.ToString();
-                rtbName.Text = dgv.Rows[idx].Cells["Name"].Value.ToString();
+                rtbName.Text = dgv.Rows[idx].Cells["QuestionName"].Value.ToString();
 
             }
         }

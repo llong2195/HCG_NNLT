@@ -48,7 +48,7 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
-                string sql = "insert into tbl_Answers(TenMon, GiaGoc, KhuyenMai, Loai) values (@TenMon, @GiaGoc, @KhuyenMai, @Loai)";
+                string sql = "insert into tbl_Answers(AnswerId,AnswerName,CurrentQuestion,NextQuestion) values (@AnswerID, @AnswerName, @CurrentQuestion, @NextQuestion)";
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
-                string sql = "update tbl_Answers set TenMon = @TenMon, GiaGoc = @GiaGoc, KhuyenMai = @KhuyenMai, Loai = @Loai where MaMon = @MaMon";
+                string sql = "update tbl_Answers set AnswerName = @AnswerName, CurrentQuestion = @CurrentQuestion, NextQuestion = @NextQuestion where AnswerId = @AnswerId";
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.Controller
         {
             try
             {
-                string sql = "delete tbl_Answers where MaMon = @MaMon";
+                string sql = "delete tbl_Answers where AnswerId = @AnswerId";
                 int rs = (int)conn.UpdateData(sql, data);
                 return rs;
             }
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
-                string sql = "select * from tbl_Answers where TenMon like '%' + @TenMon + '%'";
+                string sql = "select * from tbl_Answers where AnswerName like '%' + @AnswerName + '%'";
                 rs = conn.getData(sql, table_name, data);
                 return rs;
             }
