@@ -53,6 +53,8 @@ namespace HCG_NNLT.Src.Panel
             btnChoose.Visible = a;
             groupBox3.Visible = a;
             btnStart.Visible = !a;
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
         }
 
         private void btnChoose_Click(object sender, EventArgs e)
@@ -64,6 +66,12 @@ namespace HCG_NNLT.Src.Panel
                 string NextQuestion = r.Cells["NextQuestion"].Value.ToString();
                 listBox1.Items.Add(AnswerName);
                 CheckRule += CheckRule == "" ? AnswerID : "&" + AnswerID;
+                if(btnChoose.Text == "Làm lại")
+                {
+                    formLoad(false);
+                    btnChoose.Text = "Chọn";
+                    return;
+                }
                 if (NextQuestion != "")
                 {
                     List<SqlParameter> data = new List<SqlParameter>();
@@ -87,6 +95,8 @@ namespace HCG_NNLT.Src.Panel
                     data1.Add(new SqlParameter("@ResultID", resultID));
                     DataSet ts = resultController.getById("result", data1);
                     listBox2.Items.Add(ts.Tables["result"].Rows[0]["ResultName"].ToString());
+
+                    btnChoose.Text = "Làm lại";
                 }
                 
             }
