@@ -45,12 +45,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
 =======
             this.btnStart = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.lbQuestion = new System.Windows.Forms.Label();
             this.btnAnswer1 = new System.Windows.Forms.Button();
             this.btnAnswer2 = new System.Windows.Forms.Button();
             this.btnAnswer3 = new System.Windows.Forms.Button();
             this.btnAnswer4 = new System.Windows.Forms.Button();
             this.btnAnswer5 = new System.Windows.Forms.Button();
+>>>>>>> origin/kendz
+=======
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnChoose = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.AnswerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnswerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NextQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
 >>>>>>> origin/kendz
             this.SuspendLayout();
             // 
@@ -178,7 +196,7 @@
 =======
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(353, 225);
+            this.btnStart.Location = new System.Drawing.Point(334, 296);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(139, 52);
             this.btnStart.TabIndex = 1;
@@ -186,55 +204,62 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // lbQuestion
+            // groupBox1
             // 
-            this.lbQuestion.AutoSize = true;
-            this.lbQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbQuestion.Location = new System.Drawing.Point(219, 137);
-            this.lbQuestion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbQuestion.Name = "lbQuestion";
-            this.lbQuestion.Size = new System.Drawing.Size(415, 26);
-            this.lbQuestion.TabIndex = 2;
-            this.lbQuestion.Text = "Tư Vấn Lựa Chọn Ngôn Ngữ Lập Trình";
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(25, 75);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(466, 215);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnAnswer1
+            // dataGridView1
             // 
-            this.btnAnswer1.Location = new System.Drawing.Point(84, 331);
-            this.btnAnswer1.Name = "btnAnswer1";
-            this.btnAnswer1.Size = new System.Drawing.Size(139, 52);
-            this.btnAnswer1.TabIndex = 3;
-            this.btnAnswer1.Text = "Bắt Đầu";
-            this.btnAnswer1.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AnswerID,
+            this.AnswerName,
+            this.CurrentQuestion,
+            this.NextQuestion});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 59);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(452, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
-            // btnAnswer2
+            // btnChoose
             // 
-            this.btnAnswer2.Location = new System.Drawing.Point(570, 331);
-            this.btnAnswer2.Name = "btnAnswer2";
-            this.btnAnswer2.Size = new System.Drawing.Size(139, 52);
-            this.btnAnswer2.TabIndex = 4;
-            this.btnAnswer2.Text = "Bắt Đầu";
-            this.btnAnswer2.UseVisualStyleBackColor = true;
+            this.btnChoose.Location = new System.Drawing.Point(577, 165);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(123, 52);
+            this.btnChoose.TabIndex = 3;
+            this.btnChoose.Text = "Chọn";
+            this.btnChoose.UseVisualStyleBackColor = false;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
-            // btnAnswer3
+            // groupBox2
             // 
-            this.btnAnswer3.Location = new System.Drawing.Point(84, 442);
-            this.btnAnswer3.Name = "btnAnswer3";
-            this.btnAnswer3.Size = new System.Drawing.Size(139, 52);
-            this.btnAnswer3.TabIndex = 5;
-            this.btnAnswer3.Text = "Bắt Đầu";
-            this.btnAnswer3.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Location = new System.Drawing.Point(25, 369);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(330, 148);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin lập luận";
             // 
-            // btnAnswer4
+            // listBox1
             // 
-            this.btnAnswer4.Location = new System.Drawing.Point(570, 442);
-            this.btnAnswer4.Name = "btnAnswer4";
-            this.btnAnswer4.Size = new System.Drawing.Size(139, 52);
-            this.btnAnswer4.TabIndex = 6;
-            this.btnAnswer4.Text = "Bắt Đầu";
-            this.btnAnswer4.UseVisualStyleBackColor = true;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 24);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(318, 108);
+            this.listBox1.TabIndex = 0;
             // 
-            // btnAnswer5
+            // groupBox3
             // 
+<<<<<<< HEAD
             this.btnAnswer5.Location = new System.Drawing.Point(353, 569);
             this.btnAnswer5.Name = "btnAnswer5";
             this.btnAnswer5.Size = new System.Drawing.Size(139, 52);
@@ -242,11 +267,57 @@
             this.btnAnswer5.Text = "Bắt Đầu";
             this.btnAnswer5.UseVisualStyleBackColor = true;
 >>>>>>> origin/kendz
+=======
+            this.groupBox3.Controls.Add(this.listBox2);
+            this.groupBox3.Location = new System.Drawing.Point(467, 381);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(291, 136);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Kết quả tư vấn";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(6, 25);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(279, 95);
+            this.listBox2.TabIndex = 1;
+            // 
+            // AnswerID
+            // 
+            this.AnswerID.DataPropertyName = "AnswerID";
+            this.AnswerID.HeaderText = "Mã Trả Lời";
+            this.AnswerID.Name = "AnswerID";
+            this.AnswerID.Width = 200;
+            // 
+            // AnswerName
+            // 
+            this.AnswerName.DataPropertyName = "AnswerName";
+            this.AnswerName.HeaderText = "Câu trả lời";
+            this.AnswerName.Name = "AnswerName";
+            this.AnswerName.Width = 200;
+            // 
+            // CurrentQuestion
+            // 
+            this.CurrentQuestion.DataPropertyName = "CurrentQuestion";
+            this.CurrentQuestion.HeaderText = "CurrentQuestion";
+            this.CurrentQuestion.Name = "CurrentQuestion";
+            this.CurrentQuestion.Visible = false;
+            // 
+            // NextQuestion
+            // 
+            this.NextQuestion.DataPropertyName = "NextQuestion";
+            this.NextQuestion.HeaderText = "NextQuestion";
+            this.NextQuestion.Name = "NextQuestion";
+            this.NextQuestion.Visible = false;
+>>>>>>> origin/kendz
             // 
             // frmAdvise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 <<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1093, 647);
             this.Controls.Add(this.groupBox2);
@@ -261,15 +332,30 @@
             this.Controls.Add(this.lbQuestion);
             this.Controls.Add(this.btnStart);
 >>>>>>> origin/kendz
+=======
+            this.ClientSize = new System.Drawing.Size(820, 534);
+            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnChoose);
+            this.Controls.Add(this.groupBox1);
+>>>>>>> origin/kendz
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdvise";
             this.Text = "frmAdvise";
             this.Load += new System.EventHandler(this.frmAdvise_Load);
+<<<<<<< HEAD
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+=======
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+>>>>>>> origin/kendz
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,12 +378,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn AnswerName;
 =======
         private System.Windows.Forms.Button btnStart;
+<<<<<<< HEAD
         private System.Windows.Forms.Label lbQuestion;
         private System.Windows.Forms.Button btnAnswer1;
         private System.Windows.Forms.Button btnAnswer2;
         private System.Windows.Forms.Button btnAnswer3;
         private System.Windows.Forms.Button btnAnswer4;
         private System.Windows.Forms.Button btnAnswer5;
+>>>>>>> origin/kendz
+=======
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnChoose;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnswerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnswerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentQuestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NextQuestion;
 >>>>>>> origin/kendz
     }
 }
