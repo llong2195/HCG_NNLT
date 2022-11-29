@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.AnswerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnswerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NextQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChoose = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.AnswerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnswerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CurrentQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NextQuestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,18 +52,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 26);
+            this.label1.Size = new System.Drawing.Size(530, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tư Vấn Lựa Chọn Ngôn Ngữ Lập Trình";
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(334, 296);
+            this.btnStart.Location = new System.Drawing.Point(838, 310);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(139, 52);
+            this.btnStart.Size = new System.Drawing.Size(185, 64);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Bắt Đầu";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -72,9 +73,11 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 75);
+            this.groupBox1.Location = new System.Drawing.Point(33, 59);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(466, 215);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(740, 387);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -82,22 +85,77 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AnswerID,
             this.AnswerName,
             this.CurrentQuestion,
             this.NextQuestion});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 59);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 38);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(452, 150);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(732, 345);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // AnswerID
+            // 
+            this.AnswerID.DataPropertyName = "AnswerID";
+            this.AnswerID.HeaderText = "Mã Trả Lời";
+            this.AnswerID.MinimumWidth = 6;
+            this.AnswerID.Name = "AnswerID";
+            this.AnswerID.ReadOnly = true;
+            this.AnswerID.Width = 157;
+            // 
+            // AnswerName
+            // 
+            this.AnswerName.DataPropertyName = "AnswerName";
+            this.AnswerName.HeaderText = "Câu trả lời";
+            this.AnswerName.MinimumWidth = 6;
+            this.AnswerName.Name = "AnswerName";
+            this.AnswerName.ReadOnly = true;
+            this.AnswerName.Width = 150;
+            // 
+            // CurrentQuestion
+            // 
+            this.CurrentQuestion.DataPropertyName = "CurrentQuestion";
+            this.CurrentQuestion.HeaderText = "CurrentQuestion";
+            this.CurrentQuestion.MinimumWidth = 6;
+            this.CurrentQuestion.Name = "CurrentQuestion";
+            this.CurrentQuestion.ReadOnly = true;
+            this.CurrentQuestion.Visible = false;
+            this.CurrentQuestion.Width = 218;
+            // 
+            // NextQuestion
+            // 
+            this.NextQuestion.DataPropertyName = "NextQuestion";
+            this.NextQuestion.HeaderText = "NextQuestion";
+            this.NextQuestion.MinimumWidth = 6;
+            this.NextQuestion.Name = "NextQuestion";
+            this.NextQuestion.ReadOnly = true;
+            this.NextQuestion.Visible = false;
+            this.NextQuestion.Width = 188;
             // 
             // btnChoose
             // 
-            this.btnChoose.Location = new System.Drawing.Point(577, 165);
+            this.btnChoose.Location = new System.Drawing.Point(838, 204);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(123, 52);
+            this.btnChoose.Size = new System.Drawing.Size(164, 64);
             this.btnChoose.TabIndex = 3;
             this.btnChoose.Text = "Chọn";
             this.btnChoose.UseVisualStyleBackColor = false;
@@ -106,9 +164,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Location = new System.Drawing.Point(25, 369);
+            this.groupBox2.Location = new System.Drawing.Point(33, 454);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 148);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(440, 182);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin lập luận";
@@ -116,17 +176,21 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 24);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(8, 30);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(318, 108);
+            this.listBox1.Size = new System.Drawing.Size(423, 132);
             this.listBox1.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Location = new System.Drawing.Point(467, 381);
+            this.groupBox3.Location = new System.Drawing.Point(623, 469);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(291, 136);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(388, 167);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kết quả tư vấn";
@@ -134,44 +198,18 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 25);
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(8, 31);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(279, 95);
+            this.listBox2.Size = new System.Drawing.Size(371, 116);
             this.listBox2.TabIndex = 1;
-            // 
-            // AnswerID
-            // 
-            this.AnswerID.DataPropertyName = "AnswerID";
-            this.AnswerID.HeaderText = "Mã Trả Lời";
-            this.AnswerID.Name = "AnswerID";
-            this.AnswerID.Width = 200;
-            // 
-            // AnswerName
-            // 
-            this.AnswerName.DataPropertyName = "AnswerName";
-            this.AnswerName.HeaderText = "Câu trả lời";
-            this.AnswerName.Name = "AnswerName";
-            this.AnswerName.Width = 200;
-            // 
-            // CurrentQuestion
-            // 
-            this.CurrentQuestion.DataPropertyName = "CurrentQuestion";
-            this.CurrentQuestion.HeaderText = "CurrentQuestion";
-            this.CurrentQuestion.Name = "CurrentQuestion";
-            this.CurrentQuestion.Visible = false;
-            // 
-            // NextQuestion
-            // 
-            this.NextQuestion.DataPropertyName = "NextQuestion";
-            this.NextQuestion.HeaderText = "NextQuestion";
-            this.NextQuestion.Name = "NextQuestion";
-            this.NextQuestion.Visible = false;
             // 
             // frmAdvise
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 534);
+            this.ClientSize = new System.Drawing.Size(1093, 657);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -179,7 +217,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAdvise";
             this.Text = "frmAdvise";
             this.Load += new System.EventHandler(this.frmAdvise_Load);

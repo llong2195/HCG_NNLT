@@ -59,49 +59,59 @@ namespace HCG_NNLT.Src.Panel
 
         private void btnChoose_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in dataGridView1.SelectedRows)
+            try
             {
-                string AnswerName = r.Cells["AnswerName"].Value.ToString();
-                string AnswerID = r.Cells["AnswerID"].Value.ToString();
-                string NextQuestion = r.Cells["NextQuestion"].Value.ToString();
-                listBox1.Items.Add(AnswerName);
-                CheckRule += CheckRule == "" ? AnswerID : "&" + AnswerID;
-                if(btnChoose.Text == "Làm lại")
+                foreach (DataGridViewRow r in dataGridView1.SelectedRows)
                 {
-                    formLoad(false);
-                    btnChoose.Text = "Chọn";
-                    return;
-                }
-                if (NextQuestion != "")
-                {
-                    List<SqlParameter> data = new List<SqlParameter>();
-                    data.Add(new SqlParameter("@QuestionID", NextQuestion));
-                    DataSet ts = answerController.getByQuestionId("answer", data);
-                    dataGridView1.DataSource = ts.Tables["answer"];
+                    string AnswerName = r.Cells["AnswerName"].Value.ToString();
+                    string AnswerID = r.Cells["AnswerID"].Value.ToString();
+                    string NextQuestion = r.Cells["NextQuestion"].Value.ToString();
+                    listBox1.Items.Add(AnswerName);
+                    CheckRule += CheckRule == "" ? AnswerID : "&" + AnswerID;
+                    if (btnChoose.Text == "Làm lại")
+                    {
+                        formLoad(false);
+                        btnChoose.Text = "Chọn";
+                        this.Refresh();
+                        return;
+                    }
+                    if (NextQuestion != "")
+                    {
+                        List<SqlParameter> data = new List<SqlParameter>();
+                        data.Add(new SqlParameter("@QuestionID", NextQuestion));
+                        DataSet ts = answerController.getByQuestionId("answer", data);
+                        dataGridView1.DataSource = ts.Tables["answer"];
 
-                    List<SqlParameter> data1 = new List<SqlParameter>();
-                    data1.Add(new SqlParameter("@QuestionID", NextQuestion));
-                    DataSet rs = questionController.getById("question", data1);
-                    groupBox1.Text = rs.Tables["question"].Rows[0]["QuestionName"].ToString();
-                }
-                else
-                {
-                    List<SqlParameter> data = new List<SqlParameter>();
-                    data.Add(new SqlParameter("@Rules", CheckRule));
-                    DataSet rs = ruleController.search("rule", data);
-                    string resultID = rs.Tables["rule"].Rows[0]["ResultID"].ToString();
+                        List<SqlParameter> data1 = new List<SqlParameter>();
+                        data1.Add(new SqlParameter("@QuestionID", NextQuestion));
+                        DataSet rs = questionController.getById("question", data1);
+                        groupBox1.Text = rs.Tables["question"].Rows[0]["QuestionName"].ToString();
+                    }
+                    else
+                    {
+                        List<SqlParameter> data = new List<SqlParameter>();
+                        data.Add(new SqlParameter("@Rules", CheckRule));
+                        DataSet rs = ruleController.search("rule", data);
+                        string resultID = rs.Tables["rule"].Rows[0]["ResultID"].ToString();
 
-                    List<SqlParameter> data1 = new List<SqlParameter>();
-                    data1.Add(new SqlParameter("@ResultID", resultID));
-                    DataSet ts = resultController.getById("result", data1);
-                    listBox2.Items.Add(ts.Tables["result"].Rows[0]["ResultName"].ToString());
+                        List<SqlParameter> data1 = new List<SqlParameter>();
+                        data1.Add(new SqlParameter("@ResultID", resultID));
+                        DataSet ts = resultController.getById("result", data1);
+                        listBox2.Items.Add(ts.Tables["result"].Rows[0]["ResultName"].ToString());
 
-                    btnChoose.Text = "Làm lại";
+                        btnChoose.Text = "Làm lại";
+                        MessageBox.Show("Hê Chuyên Gia Tư Vấn Bạn Chọn Ngôn Ngữ : " + ts.Tables["result"].Rows[0]["ResultName"].ToString(), "Kết Quả Tư Vấn");
+
+                    }
+
                 }
-                
+
+
             }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERR");
+            }
 
         }
     }
