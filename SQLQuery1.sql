@@ -63,7 +63,53 @@ Insert into tbl_Results values('R6',null,'C++')
 
 
 
-Insert into tbl_Rules values('Ru1','')
+Insert into tbl_Rules values('Ru1','R2','A1&A3&A5&A10')
+Insert into tbl_Rules values('Ru2','R4','A1&A3&A5&A11&A14')
+Insert into tbl_Rules values('Ru3','R4','A1&A3&A5&A11&A15')
+Insert into tbl_Rules values('Ru4','R1','A1&A3&A5&A11&A16')
+Insert into tbl_Rules values('Ru5','R4','A1&A3&A5&A11&A17')
+Insert into tbl_Rules values('Ru6','R3','A1&A3&A6&A12')
+Insert into tbl_Rules values('Ru7','R4','A1&A3&A6&A13')
+Insert into tbl_Rules values('Ru8','R4','A1&A3&A7&A14')
+Insert into tbl_Rules values('Ru9','R4','A1&A3&A7&A15')
+Insert into tbl_Rules values('Ru10','R1','A1&A3&A7&A16')
+Insert into tbl_Rules values('Ru11','R4','A1&A3&A7&A17')
+Insert into tbl_Rules values('Ru12','R6','A1&A3&A8')
+Insert into tbl_Rules values('Ru13','R5','A1&A3&A9')
+
+Insert into tbl_Rules values('Ru14','R2','A1&A4&A5&A10')
+Insert into tbl_Rules values('Ru15','R4','A1&A4&A5&A11&A14')
+Insert into tbl_Rules values('Ru16','R4','A1&A4&A5&A11&A15')
+Insert into tbl_Rules values('Ru17','R1','A1&A4&A5&A11&A16')
+Insert into tbl_Rules values('Ru18','R4','A1&A4&A5&A11&A17')
+Insert into tbl_Rules values('Ru19','R3','A1&A4&A6&A12')
+Insert into tbl_Rules values('Ru20','R4','A1&A4&A6&A13')
+Insert into tbl_Rules values('Ru21','R4','A1&A4&A7&A14')
+Insert into tbl_Rules values('Ru22','R4','A1&A4&A7&A15')
+Insert into tbl_Rules values('Ru23','R1','A1&A4&A7&A16')
+Insert into tbl_Rules values('Ru24','R4','A1&A4&A7&A17')
+Insert into tbl_Rules values('Ru25','R6','A1&A4&A8')
+Insert into tbl_Rules values('Ru26','R5','A1&A4&A9')
+
+Insert into tbl_Rules values('Ru27','R2','A2&A18&A5&A10')
+Insert into tbl_Rules values('Ru28','R4','A2&A18&A5&A11&A14')
+Insert into tbl_Rules values('Ru29','R4','A2&A18&A5&A11&A15')
+Insert into tbl_Rules values('Ru30','R1','A2&A18&A5&A11&A16')
+Insert into tbl_Rules values('Ru31','R4','A2&A18&A5&A11&A17')
+Insert into tbl_Rules values('Ru32','R3','A2&A18&A6&A12')
+Insert into tbl_Rules values('Ru33','R4','A2&A18&A6&A13')
+Insert into tbl_Rules values('Ru34','R4','A2&A18&A7&A14')
+Insert into tbl_Rules values('Ru35','R4','A2&A18&A7&A15')
+Insert into tbl_Rules values('Ru36','R1','A2&A18&A7&A16')
+Insert into tbl_Rules values('Ru37','R4','A2&A18&A7&A17')
+Insert into tbl_Rules values('Ru38','R6','A2&A18&A8')
+Insert into tbl_Rules values('Ru39','R5','A2&A18&A9')
+
+Insert into tbl_Rules values('Ru40','R5','A2&A19&A20')
+Insert into tbl_Rules values('Ru41','R5','A2&A19&A21')
+Insert into tbl_Rules values('Ru42','R4','A2&A19&A22')
+Insert into tbl_Rules values('Ru43','R6','A2&A19&A23')
+
 
 create table tbl_Rules(
 	RuleID varchar(10) primary key,
@@ -71,3 +117,4 @@ create table tbl_Rules(
 	Rules nvarchar(max)
 ) 
 
+select top 1 * from tbl_Questions

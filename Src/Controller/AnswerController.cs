@@ -34,7 +34,7 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
-                string sql = "select * from tbl_Answers where CurrentQuestion = @Id";
+                string sql = "select * from tbl_Answers where CurrentQuestion = @QuestionID";
                 rs = conn.getData(sql, table_name, data);
                 return rs;
             }
