@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Controller
             try
             {
                 DataSet rs = new DataSet();
-                string sql = "select top 1 * from tbl_Questions";
+                string sql = "select top 1 * from tbl_Questions Where QuestionID = 'Q1'";
                 rs = conn.getData(sql, table_name, null);
                 return rs;
             }

@@ -19,6 +19,7 @@ namespace HCG_NNLT.Src.Panel
         RuleController ruleController = new RuleController();
         ResultController resultController = new ResultController();
         string CheckRule = "";
+        List<String> Question = new List<String>();
         public frmAdvise()
         {
             InitializeComponent();
@@ -53,8 +54,11 @@ namespace HCG_NNLT.Src.Panel
             btnChoose.Visible = a;
             groupBox3.Visible = a;
             btnStart.Visible = !a;
+            btnBack.Visible = a;
             listBox1.Items.Clear();
             listBox2.Items.Clear();
+            CheckRule = "";
+            Question.Clear();
         }
 
         private void btnChoose_Click(object sender, EventArgs e)
@@ -65,9 +69,11 @@ namespace HCG_NNLT.Src.Panel
                 {
                     string AnswerName = r.Cells["AnswerName"].Value.ToString();
                     string AnswerID = r.Cells["AnswerID"].Value.ToString();
+                    string CurrentQuestion = r.Cells["CurrentQuestion"].Value.ToString();
                     string NextQuestion = r.Cells["NextQuestion"].Value.ToString();
-                    listBox1.Items.Add(AnswerName);
                     CheckRule += CheckRule == "" ? AnswerID : "&" + AnswerID;
+                    listBox1.Items.Add(AnswerName);
+                    Question.Add(CurrentQuestion);
                     if (btnChoose.Text == "Làm lại")
                     {
                         formLoad(false);
@@ -101,6 +107,7 @@ namespace HCG_NNLT.Src.Panel
 
                         btnChoose.Text = "Làm lại";
                         MessageBox.Show("Hê Chuyên Gia Tư Vấn Bạn Chọn Ngôn Ngữ : " + ts.Tables["result"].Rows[0]["ResultName"].ToString(), "Kết Quả Tư Vấn");
+                        btnBack.Visible = false;
 
                     }
 
@@ -110,8 +117,36 @@ namespace HCG_NNLT.Src.Panel
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERR");
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CheckRule.Length > 0)
+                {
+                    CheckRule = CheckRule.Contains("&") ? CheckRule.Substring(0, CheckRule.LastIndexOf('&')) : "";
+                    listBox1.Items.RemoveAt(listBox1.Items.Count - 1);
+                    List<SqlParameter> data = new List<SqlParameter>();
+                    string lastQuestion = Question[Question.Count - 1];
+                    data.Add(new SqlParameter("@QuestionID", lastQuestion));
+                    DataSet ts = answerController.getByQuestionId("answer", data);
+                    dataGridView1.DataSource = ts.Tables["answer"];
+
+                    List<SqlParameter> data1 = new List<SqlParameter>();
+                    data1.Add(new SqlParameter("@QuestionID", lastQuestion));
+                    DataSet rs = questionController.getById("question", data1);
+                    groupBox1.Text = rs.Tables["question"].Rows[0]["QuestionName"].ToString();
+                    Question.RemoveAt(Question.Count - 1);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }

@@ -171,5 +171,21 @@ namespace HCG_NNLT.Src.Panel
             getData();
             clearText(true);
         }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string Name = txtTimKiem.Text.Trim();
+                List<SqlParameter> data = new List<SqlParameter>();
+                data.Add(new SqlParameter("@Name", Name));
+                DataSet rs = questionController.search("question", data);
+                dgv.DataSource = rs.Tables["question"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

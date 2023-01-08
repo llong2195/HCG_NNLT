@@ -182,5 +182,21 @@ namespace HCG_NNLT.Src.Panel
         {
 
         }
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string Name = txtTimKiem.Text.Trim();
+                List<SqlParameter> data = new List<SqlParameter>();
+                data.Add(new SqlParameter("@Rules", Name));
+                DataSet rs = ruleController.search("rule", data);
+                dgv.DataSource = rs.Tables["rule"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

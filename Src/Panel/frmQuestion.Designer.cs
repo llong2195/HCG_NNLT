@@ -46,7 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.QuestionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnswerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuestionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,6 +64,7 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "TÌm Kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // label6
             // 
@@ -101,7 +102,7 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.QuestionID,
-            this.AnswerName});
+            this.QuestionName});
             this.dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv.Location = new System.Drawing.Point(2, 101);
             this.dgv.Margin = new System.Windows.Forms.Padding(2);
@@ -279,13 +280,13 @@
             this.QuestionID.Name = "QuestionID";
             this.QuestionID.ReadOnly = true;
             // 
-            // AnswerName
+            // QuestionName
             // 
-            this.AnswerName.DataPropertyName = "AnswerName";
-            this.AnswerName.HeaderText = "Tên";
-            this.AnswerName.MinimumWidth = 6;
-            this.AnswerName.Name = "AnswerName";
-            this.AnswerName.ReadOnly = true;
+            this.QuestionName.DataPropertyName = "QuestionName";
+            this.QuestionName.HeaderText = "Tên";
+            this.QuestionName.MinimumWidth = 6;
+            this.QuestionName.Name = "QuestionName";
+            this.QuestionName.ReadOnly = true;
             // 
             // frmQuestion
             // 
@@ -331,6 +332,6 @@
         private System.Windows.Forms.RichTextBox rtbName;
         private System.Windows.Forms.TextBox txtQuestionID;
         private System.Windows.Forms.DataGridViewTextBoxColumn QuestionID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnswerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuestionName;
     }
 }
