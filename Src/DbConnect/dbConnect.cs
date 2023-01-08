@@ -10,8 +10,8 @@ namespace HCG_NNLT.Src.DbConnect
 {
     internal class dbConnect
     {
-        String conn_str = @"Data Source=KENDZ\SQLEXPRESS;Initial Catalog=HCG; User ID=sa; Password = 123456";
-        //String conn_str = @"Data Source=LLONG2195;Initial Catalog=HCG; User ID=sa; Password = 123456";
+        //String conn_str = @"Data Source=KENDZ\SQLEXPRESS;Initial Catalog=HCG; User ID=sa; Password = 123456";
+        String conn_str = @"Data Source=LLONG2195;Initial Catalog=HCG; User ID=sa; Password = 123456";
         SqlConnection conn = null;
 
         public dbConnect()

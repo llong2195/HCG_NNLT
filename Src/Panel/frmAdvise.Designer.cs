@@ -52,18 +52,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(415, 26);
+            this.label1.Size = new System.Drawing.Size(530, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tư Vấn Lựa Chọn Ngôn Ngữ Lập Trình";
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(628, 252);
+            this.btnStart.Location = new System.Drawing.Point(837, 310);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(139, 52);
+            this.btnStart.Size = new System.Drawing.Size(185, 70);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Bắt Đầu";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -73,9 +73,11 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(25, 48);
+            this.groupBox1.Location = new System.Drawing.Point(33, 59);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(555, 314);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(740, 386);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -94,11 +96,12 @@
             this.CurrentQuestion,
             this.NextQuestion});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 31);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 38);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(732, 344);
             this.dataGridView1.TabIndex = 0;
             // 
             // AnswerID
@@ -108,7 +111,7 @@
             this.AnswerID.MinimumWidth = 6;
             this.AnswerID.Name = "AnswerID";
             this.AnswerID.ReadOnly = true;
-            this.AnswerID.Width = 163;
+            this.AnswerID.Width = 196;
             // 
             // AnswerName
             // 
@@ -117,7 +120,7 @@
             this.AnswerName.MinimumWidth = 6;
             this.AnswerName.Name = "AnswerName";
             this.AnswerName.ReadOnly = true;
-            this.AnswerName.Width = 157;
+            this.AnswerName.Width = 190;
             // 
             // CurrentQuestion
             // 
@@ -141,9 +144,10 @@
             // 
             // btnChoose
             // 
-            this.btnChoose.Location = new System.Drawing.Point(628, 166);
+            this.btnChoose.Location = new System.Drawing.Point(837, 215);
+            this.btnChoose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(123, 52);
+            this.btnChoose.Size = new System.Drawing.Size(185, 70);
             this.btnChoose.TabIndex = 3;
             this.btnChoose.Text = "Chọn";
             this.btnChoose.UseVisualStyleBackColor = false;
@@ -152,9 +156,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listBox1);
-            this.groupBox2.Location = new System.Drawing.Point(25, 369);
+            this.groupBox2.Location = new System.Drawing.Point(33, 454);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(330, 148);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(440, 182);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin lập luận";
@@ -162,17 +168,21 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 24);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(8, 30);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(318, 108);
+            this.listBox1.Size = new System.Drawing.Size(423, 132);
             this.listBox1.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Location = new System.Drawing.Point(467, 381);
+            this.groupBox3.Location = new System.Drawing.Point(623, 469);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(291, 136);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(388, 167);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kết quả tư vấn";
@@ -180,16 +190,19 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 25);
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(8, 31);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(279, 95);
+            this.listBox2.Size = new System.Drawing.Size(371, 116);
             this.listBox2.TabIndex = 1;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(652, 118);
+            this.btnBack.Location = new System.Drawing.Point(837, 117);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(99, 42);
+            this.btnBack.Size = new System.Drawing.Size(185, 70);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Quay Lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -197,9 +210,9 @@
             // 
             // frmAdvise
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 534);
+            this.ClientSize = new System.Drawing.Size(1093, 657);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox3);
@@ -208,7 +221,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAdvise";
             this.Text = "frmAdvise";
             this.Load += new System.EventHandler(this.frmAdvise_Load);
